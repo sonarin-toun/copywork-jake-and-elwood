@@ -1,0 +1,335 @@
+/*  === === === === ===
+*  CSS TABLE OF CONTENTS
+
+*   I. Mobile Layout
+*   
+*  1.0 - Reset
+*  2.0 - Variables
+*  3.0 - Globals
+*  4.0 - Flex
+*  5.0 - Grid
+*  6.0 - Layout, Spacing, Border and Background Color
+*  7.0 - Typography
+*  
+*  II. Media Query (min-width: 400px)
+*
+*  III. Media Query (min-width: 800px)
+*
+*  1.0 - Variables
+*  2.0 - Flex
+*  3.0 - Grid
+*  4.0 - Layout, Spacing, Border and Background Color
+*  5.0 - Typography
+
+
+=== === === === === */
+
+/* ===============
+    I. MOBILE LAYOUT
+   =============== */
+
+/* ===============
+    1.0 RESET
+   =============== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+main,
+section,
+aside,
+nav,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+li,
+a {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+/* ===============
+    2.0 VARIABLES
+   =============== */
+
+:root {
+
+    /* === 2.1 Color === */
+
+    --primary-color: #FFE600;
+    --supporting-color: #1A202C;
+    --neutral-color-dark-gray: #404040;
+    --neutral-color-gray: #707070;
+    --neutral-color-light-gray: #EBEBEB;
+    --neutral-color-light: #FFFFFF;
+
+    /* === 2.2 Font Size === */
+
+    --font-xs: 0.75rem;
+    --font-sm: 0.875rem;
+    --font-base: 1rem;
+    --font-md: 1.125rem;
+    --font-lg: 1.25rem;
+    --font-xl: 1.5rem;
+    --font-2xl: 2rem;
+
+    /* === 2.3 Font Weight === */
+
+    --font-bold: 700;
+    --font-regular: 400;
+}
+
+/* ===============
+    4.0 Flex
+   =============== */
+
+/* === 4.1 Global === */
+
+.flex {
+    display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+/* ===============
+    5.0 Grid
+   =============== */
+
+/* === 5.1 Global === */
+
+.grid {
+    display: grid;
+}
+
+/* === 5.2 Header === */
+
+.head-container {
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* === 5.1.A Navigation === */
+
+.site-navigation__label {
+    grid-column: 2;
+}
+
+.site-navigation {
+    grid-column: 1/3;
+    grid-row: 2;
+}
+
+/* ===============
+    6.0 Layout, Spacing, Border and Background Color
+   =============== */
+
+/* === 6.1 Global === */
+
+/* === 6.2 Header === */
+
+.site-header {
+    padding: 0 1rem;
+    background-color: var(--supporting-color);
+}
+
+.site-title {
+    background-color: var(--primary-color);
+    padding-top: 3rem;
+}
+
+/* === 6.2.A Navigation === */
+
+.site-navigation__toggle {
+    display: none;
+}
+
+.site-navigation {
+    display: none;
+}
+
+.site-navigation__menu {
+    margin: 0.5rem 0;
+}
+
+.site-navigation__item {
+    padding: 1.5rem 0;
+}
+
+.site-navigation__toggle:checked~.site-navigation {
+    display: block;
+}
+
+/* ===============
+    7.0 Typography
+   =============== */
+
+/* === 7.1 Global === */
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.title {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: var(--font-xl);
+}
+
+/* === 7.2 Header === */
+
+.site-title {
+    color: var(--supporting-color);
+}
+
+.site-title_regular {
+    font-weight: var(--font-regular);
+}
+
+/* === 7.2.A Navigation === */
+
+.site-navigation__menu {
+    list-style: none;
+}
+
+.site-navigation__link {
+    color: var(--neutral-color-light);
+    font-weight: var(--font-bold);
+    text-decoration: none;
+    text-transform: lowercase;
+    font-size: var(--font-md);
+}
+
+.site-navigation__item {
+    text-align: center;
+}
+
+/* ========================
+    II. Media Query (min-width: 400px)
+   ================= */
+
+@media (min-width: 400px) {
+
+    /* ===============
+    1.0 Typography
+   =============== */
+
+    /* === 1.1 Header === */
+
+    .site-title {
+        font-size: var(--font-2xl);
+    }
+
+    /* ===============
+    2.0 Layout, Spacing, Border and Background Color
+   =============== */
+
+    /* === 2.1 Header === */
+
+    .site-header {
+        padding: 0 2rem;
+    }
+
+}
+
+/* ========================
+    III. Media Query (min-width: 400px)
+   ================= */
+
+@media (min-width: 600px) {
+
+    /* ===============
+    1.0 Layout, Spacing, Border and Background Color
+   =============== */
+
+    /* === 1.1 Header === */
+
+    .site-header {
+        padding: 0 3rem;
+    }
+
+}
+
+/* ========================
+    IV. Media Query (min-width: 800px)
+   ================= */
+
+@media (min-width: 800px) {
+
+    /* ===============
+    2.0 Flex
+   =============== */
+
+    /* === 2.1 Global === */
+
+    /* === 2.2 Header === */
+
+    .site-navigation__menu {
+        flex-direction: row;
+    }
+
+
+    /* ===============
+    3.0 Grid
+   =============== */
+
+    /* === 3.1 Global === */
+
+    /* === 3.2 Header === */
+
+    .head-container {
+        justify-content: start;
+    }
+
+    /* === 3.2.A Navigation === */
+
+    .site-navigation {
+        grid-column: 2/3;
+        grid-row: 1;
+    }
+
+
+    /* ===============
+    4.0 Layout, Spacing, Border and Background Color
+   =============== */
+
+    /* === 4.1 Global === */
+
+    .max-width {
+        margin: 0 auto;
+        max-width: 1100px;
+    }
+
+    /* === 4.2 Header === */
+
+    /* === 4.2.A Header === */
+
+    .site-navigation {
+        display: block;
+    }
+
+    .site-navigation__label {
+        display: none;
+    }
+
+    .site-navigation__item {
+        padding-left: 3rem;
+    }
+
+}
