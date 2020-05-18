@@ -5,21 +5,16 @@
 *   
 *  1.0 - Reset
 *  2.0 - Variables
-*  3.0 - Globals
-*  4.0 - Flex
-*  5.0 - Grid
-*  6.0 - Layout, Spacing, Border and Background Color
-*  7.0 - Typography
+*  3.0 - Flex
+*  4.0 - Grid
+*  5.0 - Layout, Spacing, Border and Background Color
+*  6.0 - Typography
 *  
 *  II. Media Query (min-width: 400px)
-*
-*  III. Media Query (min-width: 800px)
-*
-*  1.0 - Variables
-*  2.0 - Flex
-*  3.0 - Grid
-*  4.0 - Layout, Spacing, Border and Background Color
-*  5.0 - Typography
+*  II. Media Query (min-width: 600px)
+*  III. Media Query (min-width: 900px)
+* VI. Media Query (min-width: 1200px)
+
 
 
 === === === === === */
@@ -70,7 +65,7 @@ img {
 
 :root {
 
-    /* === 2.1 Color === */
+    /* === Color === */
 
     --primary-color: #FFE600;
     --supporting-color: #000000;
@@ -79,7 +74,7 @@ img {
     --neutral-color-light-gray: #EBEBEB;
     --neutral-color-light: #FFFFFF;
 
-    /* === 2.2 Font Size === */
+    /* === Font Size === */
 
     --font-xs: 0.75rem;
     --font-sm: 0.875rem;
@@ -88,18 +83,19 @@ img {
     --font-lg: 1.25rem;
     --font-xl: 1.5rem;
     --font-2xl: 2rem;
+    --font-3xl: 3rem;
 
-    /* === 2.3 Font Weight === */
+    /* === Font Weight === */
 
     --font-bold: 700;
     --font-regular: 400;
 }
 
 /* ===============
-    4.0 Flex
+    3.0 Flex
    =============== */
 
-/* === 4.1 Global === */
+/* === Global === */
 
 .flex {
     display: flex;
@@ -114,23 +110,23 @@ img {
 }
 
 /* ===============
-    5.0 Grid
+    4.0 Grid
    =============== */
 
-/* === 5.1 Global === */
+/* ======== Global ======== */
 
 .grid {
     display: grid;
 }
 
-/* === 5.2 Header === */
+/* === Header === */
 
 .head-container {
     justify-content: space-between;
     align-items: center;
 }
 
-/* === 5.1.A Navigation === */
+/* === Header - Navigation === */
 
 .site-navigation__label {
     grid-column: 2;
@@ -141,11 +137,23 @@ img {
     grid-row: 2;
 }
 
+/* ======== about.html ======== */
+
+.about-text-section {
+    row-gap: 2rem;
+}
+
+.about-text-container {
+    row-gap: 1rem;
+}
+
 /* ===============
-    6.0 Layout, Spacing, Border and Background Color
+    5.0 Layout, Spacing, Border and Background Color
    =============== */
 
-/* === 6.1 Global === */
+/* ======== Global ======== */
+
+/* === Global === */
 
 .button {
     display: inline-block;
@@ -162,7 +170,7 @@ img {
     box-shadow: 0 0 0 3px rgba(20, 168, 212, 0.5);
 }
 
-/* === 6.2 Header === */
+/* === Header === */
 
 .site-header {
     background-color: var(--supporting-color);
@@ -175,11 +183,11 @@ img {
 
 .head-container {
     padding: 0 1rem;
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
-/* === 6.2.A Navigation === */
+/* === Header Navigation === */
 
 .site-navigation__toggle {
     display: none;
@@ -201,54 +209,7 @@ img {
     display: block;
 }
 
-/* === 6.3 Main === */
-
-.site-main {
-    background-color: var(--supporting-color);
-}
-
-/* === 6.3.A Hero Section === */
-
-
-.hero-section {
-    max-width: 1200px;
-    margin: 0 auto;
-    background-image: url(../images/hero-bg.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    padding: 5rem 0;
-}
-
-.hero-container {
-    width: 55%;
-    padding: 3rem 1rem;
-}
-
-.hero__button {
-    background-color: var(--primary-color);
-    color: var(--supporting-color);
-}
-
-/* === 6.3.B Promotion Section === */
-
-.promotion-section {
-    background-color: var(--neutral-color-light);
-}
-
-.promotion-container {
-    padding: 3rem 2rem;
-}
-
-.promotion-text-container {
-    margin-bottom: 3rem;
-}
-
-.promotion__title {
-    margin-bottom: 1rem;
-}
-
-/* === 7. Footer === */
+/* === Footer === */
 
 .site-footer {
     background-color: var(--neutral-color-light-gray);
@@ -273,7 +234,7 @@ img {
 
 .footer-container {
     padding: 3rem 2rem;
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
@@ -282,11 +243,91 @@ img {
     margin-bottom: 0;
 }
 
+/* ======== index.html ======== */
+
+/* === Main === */
+
+.home-main {
+    background-color: var(--supporting-color);
+}
+
+/* === Main Hero Section === */
+
+.hero-section {
+    max-width: 1100px;
+    margin: 0 auto;
+    background-image: url(../images/hero-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 5rem 0;
+}
+
+.hero-container {
+    width: 55%;
+    padding: 3rem 1rem;
+}
+
+.hero__button {
+    background-color: var(--primary-color);
+    color: var(--supporting-color);
+}
+
+.hero__title {
+    margin-bottom: 1.5rem;
+}
+
+.hero__paragraph {
+    margin-bottom: 1.5rem;
+}
+
+/* === Main - Promotion Section === */
+
+.promotion-section {
+    background-color: var(--neutral-color-light);
+}
+
+.promotion-container {
+    padding: 3rem 2rem;
+}
+
+.promotion-text-container {
+    margin-bottom: 3rem;
+}
+
+.promotion__title {
+    margin-bottom: 1rem;
+}
+
+/* ======== about.html ======== */
+
+/* === Main === */
+
+.about-title-section {
+    padding: 3rem 1rem;
+}
+
+.about-text-section {
+    padding: 0 1rem 3rem 1rem;
+}
+
+.about-text-section {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.about-title-section {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
 /* ===============
-    7.0 Typography
+    6.0 Typography
    =============== */
 
-/* === 7.1 Global === */
+/* ======== Global ======== */
+
+/* === Global === */
 
 body {
     font-family: 'Montserrat', sans-serif;
@@ -298,7 +339,7 @@ body {
     font-weight: var(--font-bold);
 }
 
-/* === 7.2 Header === */
+/* === Header === */
 
 .site-title {
     color: var(--supporting-color);
@@ -312,7 +353,7 @@ body {
     color: var(--primary-color);
 }
 
-/* === 7.2.A Navigation === */
+/* === Header Navigation === */
 
 .site-navigation__menu {
     list-style: none;
@@ -330,43 +371,7 @@ body {
     text-align: center;
 }
 
-/* === 7.3 Main === */
-
-/* === 7.3.A Hero Section === */
-
-.section__title {
-    font-weight: var(--font-bold);
-    color: var(--neutral-color-light);
-    font-size: var(--font-md);
-}
-
-.section__paragraph {
-    color: var(--neutral-color-light);
-    font-size: var(--font-base);
-}
-
-.hero__title {
-    margin-bottom: 1.5rem;
-}
-
-.hero__paragraph {
-    margin-bottom: 1.5rem;
-}
-
-/* === 7.2.B Promotion Section === */
-
-.promotion__title {
-    color: var(--supporting-color);
-    font-size: var(--font-md);
-    text-align: center;
-}
-
-.promotion__paragraph {
-    color: var(--neutral-color-dark-gray);
-    text-align: center;
-}
-
-/* === 8.Footer === */
+/* === Footer === */
 
 .footer-text-section {
     opacity: 0.3;
@@ -382,6 +387,59 @@ body {
     font-size: var(--font-sm);
 }
 
+/* ======== index.html ======== */
+
+/* === Main === */
+
+/* === Main Hero Section === */
+
+.snippet__title {
+    font-weight: var(--font-bold);
+    font-size: var(--font-md);
+}
+
+.section__paragraph {
+    font-size: var(--font-base);
+}
+
+.hero__title {
+    color: var(--neutral-color-light);
+    font-size: var(--font-lg);
+}
+
+.hero__paragraph {
+    color: var(--neutral-color-light);
+}
+
+/* === Main Promotion Section === */
+
+.promotion__title {
+    color: var(--supporting-color);
+    font-size: var(--font-md);
+    text-align: center;
+}
+
+.promotion__paragraph {
+    color: var(--neutral-color-dark-gray);
+    text-align: center;
+}
+
+/* ======== About.html ======== */
+
+/* === Main === */
+
+.about__title {
+    font-size: var(--font-2xl);
+    color: var(--supporting-color);
+    text-align: center;
+}
+
+.about__subtitle {
+    font-size: var(--font-md);
+    color: var(--supporting-color);
+    text-align: center;
+}
+
 /* ========================
     II. Media Query (min-width: 400px)
    ================= */
@@ -389,16 +447,12 @@ body {
 @media (min-width: 400px) {
 
     /* ===============
-    1.0 Typography
+    Layout, Spacing, Border and Background Color
    =============== */
 
-    /* === 1.1 Header === */
+    /* ======== Global ======== */
 
-    /* ===============
-    2.0 Layout, Spacing, Border and Background Color
-   =============== */
-
-    /* === 2.1 Header === */
+    /* === Header === */
 
     .head-container {
         padding: 0 2rem;
@@ -408,36 +462,50 @@ body {
         padding-top: 3rem;
     }
 
-    /* === 2.2 Main === */
-
-    /* === 2.2.A Hero Section === */
-
-    .hero-container {
-        padding: 3rem 2rem;
-    }
-
-    /* === 2.2.B Promotion Section === */
-
-    .promotion-container {
-        padding: 3rem 3rem;
-    }
-
     /* === 2.3 Footer === */
 
     .footer-container {
         padding: 3rem 3rem;
     }
 
+    /* ======== index.html ======== */
+
+    /* === Main === */
+
+    /* === Main Hero Section === */
+
+    .hero-container {
+        padding: 3rem 2rem;
+    }
+
+    /* === Main Promotion Section === */
+
+    .promotion-container {
+        padding: 3rem 3rem;
+    }
+
+    /* ======== about.html ======== */
+
+    /* === Main === */
+
+    .about-title-section {
+        padding: 3rem 2rem;
+    }
+
+    .about-text-section {
+        padding: 0 2rem 3rem 2rem;
+    }
+
 }
 
 /* ========================
-    III. Media Query (min-width: 400px)
+    III. Media Query (min-width: 600px)
    ================= */
 
 @media (min-width: 600px) {
 
     /* ===============
-        1.0 VARIABLES
+        VARIABLES
     =============== */
 
     :root {
@@ -454,33 +522,61 @@ body {
     }
 
     /* ===============
-    2.0 Layout, Spacing, Border and Background Color
+    Layout, Spacing, Border and Background Color
    =============== */
 
-    /* === 2.1 Header === */
+    /* ======== Global ======== */
+
+    /* === Header === */
 
     .head-container {
         padding: 0 3rem;
-    }
-
-    /* === 2.2 Main === */
-
-    /* === 2.2.A Hero Section === */
-
-    .hero-container {
-        padding: 3rem 3rem;
-    }
-
-    /* === 2.2.B Promotion Section === */
-
-    .promotion-container {
-        padding: 3rem 5rem;
     }
 
     /* === 2.3 Footer === */
 
     .footer-container {
         padding: 3rem 5rem;
+    }
+
+    /* ======== index.html ======== */
+
+    /* === Main === */
+
+    /* === Main Hero Section === */
+
+    .hero-container {
+        padding: 3rem 3rem;
+    }
+
+    /* === Main Promotion Section === */
+
+    .promotion-container {
+        padding: 3rem 5rem;
+    }
+
+    /* ======== about.html ======== */
+
+    /* === Main === */
+
+    .about-title-section {
+        padding: 3rem 3rem;
+    }
+
+    .about-text-section {
+        padding: 0 3rem 3rem 3rem;
+    }
+
+    /* ===============
+    Typography
+   =============== */
+
+    /* ======== about.html ======== */
+
+    /* === Main === */
+
+    .about__title {
+        font-size: var(--font-3xl);
     }
 
 }
@@ -492,26 +588,18 @@ body {
 @media (min-width: 900px) {
 
     /* ===============
-    1.0 Flex
+    Flex
    =============== */
 
-    /* === 1.1 Global === */
+    /* ======== Global.html ======== */
 
-    /* === 1.2 Header === */
+    /* === Header === */
 
     .site-navigation__menu {
         flex-direction: row;
     }
 
-    /* === 1.3 Main === */
-
-    /* === 1.3.A Promotion Section === */
-
-    .promotion-container {
-        display: flex;
-    }
-
-    /* === 1.4 Main === */
+    /* === Footer === */
 
     .footer-container {
         display: flex;
@@ -520,37 +608,60 @@ body {
         align-items: baseline;
     }
 
+    /* ======== index.html ======== */
+
+    /* === Main === */
+
+    /* === Main Promotion Section === */
+
+    .promotion-container {
+        display: flex;
+    }
 
     /* ===============
-    2.0 Grid
+    Grid
    =============== */
 
-    /* === 2.1 Global === */
+    /* ======== Global ======== */
 
-    /* === 2.2 Header === */
+    /* === Header === */
 
     .head-container {
         justify-content: start;
     }
 
-    /* === 2.2.A Navigation === */
+    /* === Header Navigation === */
 
     .site-navigation {
         grid-column: 2/3;
         grid-row: 1;
     }
 
+    /* ======== about.html ======== */
+
+    /* === Main === */
+
+    .about-text-section {
+        grid-template-columns: auto auto;
+        column-gap: 4rem;
+    }
+
+    .about__image {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .about-text-container {
+        grid-column: 2;
+    }
 
     /* ===============
-    3.0 Layout, Spacing, Border and Background Color
+    Layout, Spacing, Border and Background Color
    =============== */
 
-    /* === 3.1 Global === */
+    /* ======== Global ======== */
 
-
-    /* === 3.2 Header === */
-
-    /* === 3.2.A Header === */
+    /* === Header Navigation === */
 
     .site-navigation {
         display: block;
@@ -564,12 +675,20 @@ body {
         padding-left: 3rem;
     }
 
-    /* === 3.2 Main === */
+    /* === Footer === */
 
-    /* === 3.2.A Promotion Section  === */
+    .footer-text-section {
+        width: 70%;
+    }
+
+    /* ======== index.html ======== */
+
+    /* === Main === */
+
+    /* === Main Promotion Section  === */
 
     .promotion-container {
-        max-width: 1200px;
+        max-width: 1100px;
         margin: 0 auto;
         justify-content: space-between;
     }
@@ -578,19 +697,40 @@ body {
         width: 30%;
     }
 
-    /* === 4. Footer === */
+    /* ======== about.html ======== */
 
-    .footer-text-section {
-        width: 70%;
+    /* === Main === */
+
+    .about__image {
+        padding-top: 0.5rem;
     }
 
-
     /* ===============
-    4.0 Typography
+    Typography
    =============== */
+
+   /* ======== Global ======== */
+
+    /* === Footer === */
 
     .footer-text-section {
         text-align: left;
+    }
+
+}
+
+@media (min-width: 1200px) {
+
+    /* clear the horizontal padding */
+
+    .head-container,
+    .hero-container,
+    .promotion-container,
+    .about-title-section,
+    .about-text-section,
+    .footer-container {
+        padding-left: 0;
+        padding-right: 0;
     }
 
 }
