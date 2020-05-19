@@ -126,6 +126,12 @@ img {
     align-items: center;
 }
 
+/* === Main === */
+
+.text-section {
+    row-gap: 2rem;
+}
+
 /* === Header - Navigation === */
 
 .site-navigation__label {
@@ -139,13 +145,28 @@ img {
 
 /* ======== about.html ======== */
 
-.about-text-section {
-    row-gap: 2rem;
-}
+/* === Main === */
 
 .about-text-container {
     row-gap: 1rem;
 }
+
+/* ======== contact.html ======== */
+
+/* === Main === */
+
+.form__button {
+    justify-self: end;
+}
+
+.contact-form {
+    row-gap: 2rem;
+}
+
+.contact-text-container {
+    row-gap: 1rem;
+}
+
 
 /* ===============
     5.0 Layout, Spacing, Border and Background Color
@@ -156,18 +177,28 @@ img {
 /* === Global === */
 
 .button {
-    display: inline-block;
+    background-color: var(--primary-color);
     text-decoration: none;
     padding: 0.5rem 1rem;
     text-transform: lowercase;
     font-weight: var(--font-bold);
     font-size: var(--font-sm);
     outline: none;
+    transition: background-color 0.1s;
+    transition: transform 0.1s;
+    transform: scale(1);
 }
 
 .button:hover,
-.button:active {
+.button:active,
+.button:focus {
     box-shadow: 0 0 0 3px rgba(20, 168, 212, 0.5);
+}
+
+.button:hover,
+.button:focus {
+    background-color: var(--neutral-color-light-gray);
+    transform: scale(1.05);
 }
 
 /* === Header === */
@@ -207,6 +238,25 @@ img {
 
 .site-navigation__toggle:checked~.site-navigation {
     display: block;
+}
+
+/* === Main === */
+
+.section__image {
+    object-fit: cover;
+    height: auto;
+}
+
+.title-section {
+    padding: 4rem 1rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.text-section {
+    padding: 0 1rem 3rem 1rem;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
 /* === Footer === */
@@ -268,17 +318,18 @@ img {
     padding: 3rem 1rem;
 }
 
-.hero__button {
-    background-color: var(--primary-color);
-    color: var(--supporting-color);
-}
-
 .hero__title {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 .hero__paragraph {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* === Button === */
+
+.hero__button {
+    display: inline;
 }
 
 /* === Main - Promotion Section === */
@@ -303,23 +354,67 @@ img {
 
 /* === Main === */
 
-.about-title-section {
-    padding: 3rem 1rem;
+.about__title {
+    margin-bottom: 1rem;
 }
 
-.about-text-section {
-    padding: 0 1rem 3rem 1rem;
+/* ======== contact.html ======== */
+
+/* === Main === */
+
+.contact__title {
+    margin-bottom: 1rem;
 }
 
-.about-text-section {
-    max-width: 1100px;
-    margin: 0 auto;
+.contact-text-container {
+    margin-bottom: 1rem;
 }
 
-.about-title-section {
-    max-width: 700px;
-    margin: 0 auto;
+/* === Form === */
+
+.name-label,
+.email-label,
+.message-label {
+    margin-bottom: 0.5rem;
 }
+
+.name-input,
+.email-input,
+.message-input {
+    outline: none;
+    resize: none;
+    width: 100%;
+    border: 1px solid var(--neutral-color-gray);
+    padding: 0.5rem;
+    transform: scale(1);
+    transition: background-color 0.1s ;
+    transition: transform 0.1s;
+}
+
+.name-input:hover,
+.email-input:hover,
+.message-input:hover,
+.name-input:active,
+.email-input:active,
+.message-input:active,
+.name-input:focus,
+.email-input:focus,
+.message-input:focus {
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+    background-color: #F5F7FA;
+    transform: scale(1.02);
+}
+
+.name-input:invalid,
+.email-input:invalid,
+.message-input:invalid {
+    box-shadow: 0 0 0 2px rgba(230, 24, 24, 0.5);
+}
+
+.send-button {
+    border: none;
+}
+
 
 /* ===============
     6.0 Typography
@@ -337,6 +432,19 @@ body {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: var(--font-2xl);
     font-weight: var(--font-bold);
+}
+
+.button {
+    color: var(--supporting-color);
+}
+
+/* === Form === */
+
+input,
+textarea,
+button,
+select {
+    font-family: 'Montserrat', sans-serif;;
 }
 
 /* === Header === */
@@ -371,6 +479,23 @@ body {
     text-align: center;
 }
 
+/* === Main === */
+
+.section__subtitle {
+    font-size: var(--font-md);
+    color: var(--supporting-color);
+    text-align: center;
+}
+
+.snippet__title {
+    font-weight: var(--font-bold);
+    font-size: var(--font-md);
+}
+
+.section__paragraph {
+    font-size: var(--font-base);
+}
+
 /* === Footer === */
 
 .footer-text-section {
@@ -392,15 +517,6 @@ body {
 /* === Main === */
 
 /* === Main Hero Section === */
-
-.snippet__title {
-    font-weight: var(--font-bold);
-    font-size: var(--font-md);
-}
-
-.section__paragraph {
-    font-size: var(--font-base);
-}
 
 .hero__title {
     color: var(--neutral-color-light);
@@ -424,7 +540,7 @@ body {
     text-align: center;
 }
 
-/* ======== About.html ======== */
+/* ======== about.html ======== */
 
 /* === Main === */
 
@@ -434,11 +550,39 @@ body {
     text-align: center;
 }
 
-.about__subtitle {
-    font-size: var(--font-md);
+/* ======== contact.html ======== */
+
+/* === Main === */
+
+.contact__title {
+    font-size: var(--font-2xl);
     color: var(--supporting-color);
     text-align: center;
 }
+
+.email-link {
+    color: var(--supporting-color);
+    transition: color 0.2s;
+}
+
+.email-link:hover,
+.email-link:active,
+.email-link:focus {
+    color: var(--primary-color);
+}
+
+.contact__image {
+    margin-bottom: 1rem;
+}
+
+/* === Form === */
+
+.name-label,
+.email-label,
+.message-label {
+    font-size: var(--font-md);
+}
+
 
 /* ========================
     II. Media Query (min-width: 400px)
@@ -462,6 +606,16 @@ body {
         padding-top: 3rem;
     }
 
+    /* === Main === */
+
+    .title-section {
+        padding: 3rem 2rem;
+    }
+
+    .text-section {
+        padding: 0 2rem 3rem 2rem;
+    }
+
     /* === 2.3 Footer === */
 
     .footer-container {
@@ -482,18 +636,6 @@ body {
 
     .promotion-container {
         padding: 3rem 3rem;
-    }
-
-    /* ======== about.html ======== */
-
-    /* === Main === */
-
-    .about-title-section {
-        padding: 3rem 2rem;
-    }
-
-    .about-text-section {
-        padding: 0 2rem 3rem 2rem;
     }
 
 }
@@ -533,6 +675,16 @@ body {
         padding: 0 3rem;
     }
 
+    /* === Main === */
+
+    .title-section {
+        padding: 5rem 3rem;
+    }
+
+    .text-section {
+        padding: 0 3rem 6rem 3rem;
+    }
+
     /* === 2.3 Footer === */
 
     .footer-container {
@@ -555,18 +707,6 @@ body {
         padding: 3rem 5rem;
     }
 
-    /* ======== about.html ======== */
-
-    /* === Main === */
-
-    .about-title-section {
-        padding: 3rem 3rem;
-    }
-
-    .about-text-section {
-        padding: 0 3rem 3rem 3rem;
-    }
-
     /* ===============
     Typography
    =============== */
@@ -576,6 +716,14 @@ body {
     /* === Main === */
 
     .about__title {
+        font-size: var(--font-3xl);
+    }
+
+    /* ======== about.html ======== */
+
+    /* === Main === */
+
+    .contact__title {
         font-size: var(--font-3xl);
     }
 
@@ -618,6 +766,23 @@ body {
         display: flex;
     }
 
+    /* ======== contact.html ======== */
+
+    /* === Main === */
+
+    .contact-text-section {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .contact-text-container {
+        width: 35%;
+    }
+
+    .form-container {
+        width: 60%;
+    }
+
     /* ===============
     Grid
    =============== */
@@ -637,8 +802,6 @@ body {
         grid-row: 1;
     }
 
-    /* ======== about.html ======== */
-
     /* === Main === */
 
     .about-text-section {
@@ -646,12 +809,33 @@ body {
         column-gap: 4rem;
     }
 
+    /* ======== about.html ======== */
+
+    /* === Main === */
+
     .about__image {
         grid-column: 1;
         grid-row: 1;
     }
 
     .about-text-container {
+        grid-column: 2;
+    }
+
+    /* ======== contact.html ======== */
+
+    /* === Main === */
+    
+    .contact-form {
+        grid-template-columns: auto auto;
+        column-gap: 4rem;
+    }
+
+    .form__message {
+        grid-column: span 2;
+    }
+
+    .form__button {
         grid-column: 2;
     }
 
@@ -673,6 +857,12 @@ body {
 
     .site-navigation__item {
         padding-left: 3rem;
+    }
+
+    /* === Main === */
+
+    .section__image {
+        padding-top: 0.5rem;
     }
 
     /* === Footer === */
@@ -697,19 +887,11 @@ body {
         width: 30%;
     }
 
-    /* ======== about.html ======== */
-
-    /* === Main === */
-
-    .about__image {
-        padding-top: 0.5rem;
-    }
-
     /* ===============
     Typography
    =============== */
 
-   /* ======== Global ======== */
+    /* ======== Global ======== */
 
     /* === Footer === */
 
@@ -726,8 +908,8 @@ body {
     .head-container,
     .hero-container,
     .promotion-container,
-    .about-title-section,
-    .about-text-section,
+    .title-section,
+    .text-section,
     .footer-container {
         padding-left: 0;
         padding-right: 0;
