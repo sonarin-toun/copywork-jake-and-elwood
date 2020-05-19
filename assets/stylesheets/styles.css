@@ -381,14 +381,15 @@ img {
 .name-input,
 .email-input,
 .message-input {
-    box-shadow: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
     outline: none;
     resize: none;
     width: 100%;
     border: 1px solid var(--neutral-color-gray);
     padding: 0.5rem;
     transform: scale(1);
-    transition: background-color 0.1s ;
+    transition: background-color 0.1s;
     transition: transform 0.1s;
     border-radius: 0;
 }
@@ -447,7 +448,8 @@ input,
 textarea,
 button,
 select {
-    font-family: 'Montserrat', sans-serif;;
+    font-family: 'Montserrat', sans-serif;
+    ;
 }
 
 /* === Header === */
@@ -828,7 +830,7 @@ select {
     /* ======== contact.html ======== */
 
     /* === Main === */
-    
+
     .contact-form {
         grid-template-columns: auto auto;
         column-gap: 4rem;
