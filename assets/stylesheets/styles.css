@@ -389,6 +389,7 @@ img {
     transform: scale(1);
     transition: background-color 0.1s ;
     transition: transform 0.1s;
+    border-radius: 0;
 }
 
 .name-input:hover,
@@ -413,6 +414,7 @@ img {
 
 .send-button {
     border: none;
+    border-radius: 0;
 }
 
 
