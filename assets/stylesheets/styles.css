@@ -381,6 +381,7 @@ img {
 .name-input,
 .email-input,
 .message-input {
+    box-shadow: none;
     outline: none;
     resize: none;
     width: 100%;
